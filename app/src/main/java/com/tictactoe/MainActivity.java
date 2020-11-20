@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if(tttboard[i][j] == 0) {
                     ivs[i*3 + j].setBackgroundResource(R.drawable.wing);
                 } else {
-                    Log.d("DBG", "nothing set");
+                    //Log.d("DBG", "nothing set");
                 }
             }
         }
@@ -131,6 +131,18 @@ public class MainActivity extends AppCompatActivity {
             turnText.setText("current player turn is: Eagle");
         } else {
             turnText.setText("current player turn is: Wing");
+        }
+
+        WinChecker wc = new WinChecker(tttboard);
+        int wcout = wc.checkWinner();
+        if(wcout == -1) {
+            Log.d("DBG", "nobody has won");
+        } else if(wcout == 1) {
+            Log.d("DBG", "Eagles have won");
+            Toast.makeText(MainActivity.this, "Eagles won", Toast.LENGTH_LONG).show();
+        } else if(wcout == 0) {
+            Log.d("DBG", "Wings have won");
+            Toast.makeText(MainActivity.this, "Wings won", Toast.LENGTH_LONG).show();
         }
 
     }
