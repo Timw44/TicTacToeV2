@@ -6,7 +6,9 @@ import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void playButtonPressed(View view) {
+        setContentView(R.layout.gamegrid);
 
         // clear tttboard
         for(int i = 0; i < 3; i++) {
@@ -28,10 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 tttboard[i][j] = -1;
             }
         }
-    }
-
-    public void playButtonPressed(View view) {
-        setContentView(R.layout.gamegrid);
 
         // populate ivs list
         ivs[0] = findViewById(R.id.row1col1);
@@ -122,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if(tttboard[i][j] == 0) {
                     ivs[i*3 + j].setBackgroundResource(R.drawable.wing);
                 } else {
-                    Log.d("DBG", "nothing set");
+                    //Log.d("DBG", "nothing set");
                 }
             }
         }
@@ -133,6 +135,33 @@ public class MainActivity extends AppCompatActivity {
             turnText.setText("current player turn is: Wing");
         }
 
+        WinChecker wc = new WinChecker(tttboard);
+        int wcout = wc.checkWinner();
+        if(wcout == -1) {
+            Log.d("DBG", "nobody has won");
+        } else if(wcout == 1) {
+            Log.d("DBG", "Eagles have won");
+            Toast.makeText(MainActivity.this, "Eagles won", Toast.LENGTH_LONG).show();
+            turnText.setText("EAGLES HAVE WON");
+            makeBackButton();
+        } else if(wcout == 0) {
+            Log.d("DBG", "Wings have won");
+            Toast.makeText(MainActivity.this, "Wings won", Toast.LENGTH_LONG).show();
+            turnText.setText("WINGS HAVE WON");
+            makeBackButton();
+        }
+
+    }
+
+    public void makeBackButton() {
+        Button backbtn = new Button(this);
+        backbtn.setText("BACK TO MAIN MENU");
+        backbtn.setOnClickListener(view -> {
+            setContentView(R.layout.activity_main);
+        });
+
+        LinearLayout gl = findViewById(R.id.gamelayout);
+        gl.addView(backbtn);
     }
 
     public void switchPlayer() {
