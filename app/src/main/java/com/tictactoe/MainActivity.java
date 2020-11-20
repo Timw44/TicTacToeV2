@@ -2,91 +2,144 @@ package com.tictactoe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    public int[][] tttboard = new int[3][3];
+    public boolean firstPlayersTurn = true;
+    public ImageView[] ivs = new ImageView[9];
+    public TextView turnText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public boolean firstPlayersTurn = true;
+        // clear tttboard
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                tttboard[i][j] = -1;
+            }
+        }
+    }
 
     public void playButtonPressed(View view) {
         setContentView(R.layout.gamegrid);
+
+        // populate ivs list
+        ivs[0] = findViewById(R.id.row1col1);
+        ivs[1] = findViewById(R.id.row1col2);
+        ivs[2] = findViewById(R.id.row1col3);
+        ivs[3] = findViewById(R.id.row2col1);
+        ivs[4] = findViewById(R.id.row2col2);
+        ivs[5] = findViewById(R.id.row2col3);
+        ivs[6] = findViewById(R.id.row3col1);
+        ivs[7] = findViewById(R.id.row3col2);
+        ivs[8] = findViewById(R.id.row3col3);
+
+        // register turn text var
+        turnText = findViewById(R.id.turnText);
     }
 
     public void grid1Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row1col1);
-        whichImage(iv);
+        whichImage(iv, 0, 0);
     }
     public void grid2Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row1col2);
-        whichImage(iv);
+        whichImage(iv, 0, 1);
     }
     public void grid3Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row1col3);
-        whichImage(iv);
+        whichImage(iv, 0, 2);
     }
     public void grid4Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row2col1);
-        whichImage(iv);
+        whichImage(iv, 1, 0);
     }
     public void grid5Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row2col2);
-        whichImage(iv);
+        whichImage(iv, 1, 1);
     }
     public void grid6Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row2col3);
-        whichImage(iv);
+        whichImage(iv, 1, 2);
     }
     public void grid7Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row3col1);
-        whichImage(iv);
+        whichImage(iv, 2, 0);
     }
     public void grid8Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row3col2);
-        whichImage(iv);
+        whichImage(iv, 2, 1);
     }
     public void grid9Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row3col3);
-        whichImage(iv);
+        whichImage(iv, 2, 2);
     }
 
-    public void whichImage(ImageView iv)
-    {
-        if (firstPlayersTurn)
-        {
-            iv.setBackgroundResource(R.drawable.eagle);
+    public void whichImage(ImageView iv, int row, int col) {
+        //tttboard[row][col] = firstPlayersTurn;
+        if (tttboard[row][col] == -1) {
+            if (firstPlayersTurn) {
+                //iv.setBackgroundResource(R.drawable.eagle);
+                tttboard[row][col] = 1;
+            } else {
+                //iv.setBackgroundResource(R.drawable.wing);
+                tttboard[row][col] = 0;
+            }
+
+            switchPlayer();
+            updatetttboard();
+        } else {
+            Toast.makeText(MainActivity.this, "Spot already taken", Toast.LENGTH_LONG).show();
         }
-        else{
-            iv.setBackgroundResource(R.drawable.wing);
-        }
-        switchPlayer();
+
     }
 
-    public void switchPlayer()
-    {
-        if (firstPlayersTurn)
-        {
+    public void updatetttboard() {
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                //Log.d("DBG", "checking " + (i*3 + j));
+                if(tttboard[i][j] == 1) {
+                    ivs[i*3 + j].setBackgroundResource(R.drawable.eagle);
+                } else if(tttboard[i][j] == 0) {
+                    ivs[i*3 + j].setBackgroundResource(R.drawable.wing);
+                } else {
+                    Log.d("DBG", "nothing set");
+                }
+            }
+        }
+
+        if (firstPlayersTurn) {
+            turnText.setText("current player turn is: Eagle");
+        } else {
+            turnText.setText("current player turn is: Wing");
+        }
+
+    }
+
+    public void switchPlayer() {
+        if (firstPlayersTurn) {
             firstPlayersTurn = false;
-        }
-        else{
+        } else {
             firstPlayersTurn = true;
         }
-
     }
 }

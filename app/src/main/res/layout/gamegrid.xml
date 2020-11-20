@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@color/red">
+        android:background="@color/red"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/gridRow1"
@@ -26,24 +25,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
                 android:background="@drawable/empty"
-                android:onClick="grid1Pressed" />
+                android:onClick="grid1Pressed"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/row1col2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/empty"
                 android:onClick="grid2Pressed"
-                android:background="@drawable/empty" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/row1col3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/empty"
                 android:onClick="grid3Pressed"
-                android:background="@drawable/empty" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty" />
         </LinearLayout>
 
         <LinearLayout
@@ -57,24 +65,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/empty"
                 android:onClick="grid4Pressed"
-                android:background="@drawable/empty" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty"
+                android:adjustViewBounds="true" />
 
             <ImageView
                 android:id="@+id/row2col2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/empty"
                 android:onClick="grid5Pressed"
-                android:background="@drawable/empty" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/row2col3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/empty"
                 android:onClick="grid6Pressed"
-                android:background="@drawable/empty" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,24 +105,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/empty"
                 android:onClick="grid7Pressed"
-                android:background="@drawable/empty" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/row3col2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/empty"
                 android:onClick="grid8Pressed"
-                android:background="@drawable/empty" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty" />
 
             <ImageView
                 android:id="@+id/row3col3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/empty"
                 android:onClick="grid9Pressed"
-                android:background="@drawable/empty" />
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/empty" />
         </LinearLayout>
     </LinearLayout>
 
