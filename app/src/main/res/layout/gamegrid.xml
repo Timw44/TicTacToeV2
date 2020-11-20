@@ -34,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="grid2Pressed"
                 tools:srcCompat="@drawable/empty" />
 
             <ImageView
@@ -41,6 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="grid3Pressed"
                 tools:srcCompat="@drawable/empty" />
         </LinearLayout>
 
@@ -55,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="grid4Pressed"
                 tools:srcCompat="@drawable/empty" />
 
             <ImageView
@@ -62,6 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="grid5Pressed"
                 tools:srcCompat="@drawable/empty" />
 
             <ImageView
@@ -69,6 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="grid6Pressed"
                 tools:srcCompat="@drawable/empty" />
         </LinearLayout>
 
@@ -83,6 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="grid7Pressed"
                 tools:srcCompat="@drawable/empty" />
 
             <ImageView
@@ -90,6 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="grid8Pressed"
                 tools:srcCompat="@drawable/empty" />
 
             <ImageView
@@ -97,6 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="grid9Pressed"
                 tools:srcCompat="@drawable/empty" />
         </LinearLayout>
     </LinearLayout>
