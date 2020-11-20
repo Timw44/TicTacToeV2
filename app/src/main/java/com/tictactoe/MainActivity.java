@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         WinChecker wc = new WinChecker(tttboard);
         int wcout = wc.checkWinner();
         if(wcout == -1) {
-            Log.d("DBG", "nobody has won");
+            // Log.d("DBG", "nobody has won yet");
         } else if(wcout == 1) {
             Log.d("DBG", "Eagles have won");
             Toast.makeText(MainActivity.this, "Eagles won", Toast.LENGTH_LONG).show();
