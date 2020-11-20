@@ -24,46 +24,55 @@ public class MainActivity extends AppCompatActivity {
         //sets view based on bool
         ImageView iv = findViewById(R.id.imageView2);
         whichImage(iv);
+        switchPlayer();
     }
     public void grid2Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.imageView3);
         whichImage(iv);
+        switchPlayer();
     }
     public void grid3Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.imageView4);
         whichImage(iv);
+        switchPlayer();
     }
     public void grid4Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.imageView5);
         whichImage(iv);
+        switchPlayer();
     }
     public void grid5Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.imageView6);
         whichImage(iv);
+        switchPlayer();
     }
     public void grid6Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.imageView7);
         whichImage(iv);
+        switchPlayer();
     }
     public void grid7Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.imageView8);
         whichImage(iv);
+        switchPlayer();
     }
     public void grid8Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.imageView9);
         whichImage(iv);
+        switchPlayer();
     }
     public void grid9Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.imageView10);
         whichImage(iv);
+        switchPlayer();
     }
 
     public void whichImage(ImageView iv)
@@ -75,5 +84,17 @@ public class MainActivity extends AppCompatActivity {
         else{
             iv.setBackgroundResource(R.drawable.wing);
         }
+    }
+
+    public void switchPlayer()
+    {
+        if (firstPlayersTurn)
+        {
+            firstPlayersTurn = false;
+        }
+        else{
+            firstPlayersTurn = true;
+        }
+
     }
 }
