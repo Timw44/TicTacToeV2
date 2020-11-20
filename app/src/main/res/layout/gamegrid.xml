@@ -22,15 +22,15 @@
 
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/row1col1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="grid1Pressed"
-                android:background="@drawable/empty" />
+                android:background="@drawable/empty"
+                android:onClick="grid1Pressed" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/row1col2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -38,7 +38,7 @@
                 android:background="@drawable/empty" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/row1col3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -53,7 +53,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/row2col1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -61,7 +61,7 @@
                 android:background="@drawable/empty" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/row2col2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -69,7 +69,7 @@
                 android:background="@drawable/empty" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/row2col3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -84,7 +84,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/row3col1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -92,7 +92,7 @@
                 android:background="@drawable/empty" />
 
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/row3col2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -100,7 +100,7 @@
                 android:background="@drawable/empty" />
 
             <ImageView
-                android:id="@+id/imageView10"
+                android:id="@+id/row3col3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
