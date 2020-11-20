@@ -24,55 +24,46 @@ public class MainActivity extends AppCompatActivity {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row1col1);
         whichImage(iv);
-        switchPlayer();
     }
     public void grid2Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row1col2);
         whichImage(iv);
-        switchPlayer();
     }
     public void grid3Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row1col3);
         whichImage(iv);
-        switchPlayer();
     }
     public void grid4Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row2col1);
         whichImage(iv);
-        switchPlayer();
     }
     public void grid5Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row2col2);
         whichImage(iv);
-        switchPlayer();
     }
     public void grid6Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row2col3);
         whichImage(iv);
-        switchPlayer();
     }
     public void grid7Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row3col1);
         whichImage(iv);
-        switchPlayer();
     }
     public void grid8Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row3col2);
         whichImage(iv);
-        switchPlayer();
     }
     public void grid9Pressed(View view) {
         //sets view based on bool
         ImageView iv = findViewById(R.id.row3col3);
         whichImage(iv);
-        switchPlayer();
     }
 
     public void whichImage(ImageView iv)
@@ -84,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         else{
             iv.setBackgroundResource(R.drawable.wing);
         }
+        switchPlayer();
     }
 
     public void switchPlayer()
