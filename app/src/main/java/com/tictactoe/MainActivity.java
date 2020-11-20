@@ -140,9 +140,11 @@ public class MainActivity extends AppCompatActivity {
         } else if(wcout == 1) {
             Log.d("DBG", "Eagles have won");
             Toast.makeText(MainActivity.this, "Eagles won", Toast.LENGTH_LONG).show();
+            turnText.setText("EAGLES HAVE WON");
         } else if(wcout == 0) {
             Log.d("DBG", "Wings have won");
             Toast.makeText(MainActivity.this, "Wings won", Toast.LENGTH_LONG).show();
+            turnText.setText("WINGS HAVE WON");
         }
 
     }

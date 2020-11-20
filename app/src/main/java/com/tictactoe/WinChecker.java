@@ -41,8 +41,8 @@ public class WinChecker {
         //o*o
         //o*o
         //o*o
-        if(tttboard[0][1] == tttboard[1][1] && tttboard[1][0] == tttboard[2][1]) {
-            return tttboard[0][1];
+        if(tttboard[0][1] == tttboard[1][1] && tttboard[1][1] == tttboard[2][1]) {
+            return tttboard[1][1];
         }
 
         //oo*
