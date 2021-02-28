@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean firstPlayersTurn = true;
     public ImageView[] ivs = new ImageView[9];
     public TextView turnText;
+    public boolean backBtnAdded=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,14 +155,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void makeBackButton() {
-        Button backbtn = new Button(this);
-        backbtn.setText("BACK TO MAIN MENU");
-        backbtn.setOnClickListener(view -> {
-            setContentView(R.layout.activity_main);
-        });
+       if(!backBtnAdded)
+       {
+           Button backbtn = new Button(this);
+           backbtn.setText("BACK TO MAIN MENU");
+           backbtn.setOnClickListener(view -> {
+               setContentView(R.layout.activity_main);
+           });
 
-        LinearLayout gl = findViewById(R.id.gamelayout);
-        gl.addView(backbtn);
+           LinearLayout gl = findViewById(R.id.gamelayout);
+           gl.addView(backbtn);
+           backBtnAdded=true;
+       }
     }
 
     public void switchPlayer() {
