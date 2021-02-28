@@ -51,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
         // register turn text var
         turnText = findViewById(R.id.turnText);
+        if (firstPlayersTurn) {
+            turnText.setText("current player turn is: Eagle");
+        } else {
+            turnText.setText("current player turn is: Wing");
+        }
     }
 
     public void grid1Pressed(View view) {
