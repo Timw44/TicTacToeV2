@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public ImageView[] ivs = new ImageView[9];
     public TextView turnText;
     public boolean backBtnAdded=false;
+    public int spotsAvailable=9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public void playButtonPressed(View view) {
         setContentView(R.layout.gamegrid);
         backBtnAdded=false;
+        spotsAvailable=9;
         // clear tttboard
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 3; j++) {
@@ -52,46 +54,55 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void grid1Pressed(View view) {
+        spotsAvailable += -1;
         //sets view based on bool
         ImageView iv = findViewById(R.id.row1col1);
         whichImage(iv, 0, 0);
     }
     public void grid2Pressed(View view) {
+        spotsAvailable += -1;
         //sets view based on bool
         ImageView iv = findViewById(R.id.row1col2);
         whichImage(iv, 0, 1);
     }
     public void grid3Pressed(View view) {
+        spotsAvailable += -1;
         //sets view based on bool
         ImageView iv = findViewById(R.id.row1col3);
         whichImage(iv, 0, 2);
     }
     public void grid4Pressed(View view) {
+        spotsAvailable += -1;
         //sets view based on bool
         ImageView iv = findViewById(R.id.row2col1);
         whichImage(iv, 1, 0);
     }
     public void grid5Pressed(View view) {
+        spotsAvailable += -1;
         //sets view based on bool
         ImageView iv = findViewById(R.id.row2col2);
         whichImage(iv, 1, 1);
     }
     public void grid6Pressed(View view) {
+        spotsAvailable += -1;
         //sets view based on bool
         ImageView iv = findViewById(R.id.row2col3);
         whichImage(iv, 1, 2);
     }
     public void grid7Pressed(View view) {
+        spotsAvailable += -1;
         //sets view based on bool
         ImageView iv = findViewById(R.id.row3col1);
         whichImage(iv, 2, 0);
     }
     public void grid8Pressed(View view) {
+        spotsAvailable += -1;
         //sets view based on bool
         ImageView iv = findViewById(R.id.row3col2);
         whichImage(iv, 2, 1);
     }
     public void grid9Pressed(View view) {
+        spotsAvailable += -1;
         //sets view based on bool
         ImageView iv = findViewById(R.id.row3col3);
         whichImage(iv, 2, 2);
@@ -138,9 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
         WinChecker wc = new WinChecker(tttboard);
         int wcout = wc.checkWinner();
-        if(wcout == -1) {
-            // Log.d("DBG", "nobody has won yet");
-        } else if(wcout == 1) {
+         if(wcout == 1) {
             Log.d("DBG", "Eagles have won");
             Toast.makeText(MainActivity.this, "Eagles won", Toast.LENGTH_LONG).show();
             turnText.setText("EAGLES HAVE WON");
@@ -149,6 +158,13 @@ public class MainActivity extends AppCompatActivity {
             Log.d("DBG", "Wings have won");
             Toast.makeText(MainActivity.this, "Wings won", Toast.LENGTH_LONG).show();
             turnText.setText("WINGS HAVE WON");
+            makeBackButton();
+        }
+        else if(spotsAvailable==0)
+        {
+            Log.d("DBG", "Tie");
+            Toast.makeText(MainActivity.this, "Tie", Toast.LENGTH_LONG).show();
+            turnText.setText("TIE");
             makeBackButton();
         }
 
