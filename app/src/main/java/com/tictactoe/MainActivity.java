@@ -147,9 +147,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (firstPlayersTurn) {
-            turnText.setText("current player turn is: Eagle");
+            turnText.setText("Current player turn is: Eagle");
         } else {
-            turnText.setText("current player turn is: Wing");
+            turnText.setText("Current player turn is: Wing");
         }
 
         WinChecker wc = new WinChecker(tttboard);

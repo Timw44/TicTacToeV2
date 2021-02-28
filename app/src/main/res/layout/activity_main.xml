@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/black">
 
     <TextView
         android:id="@+id/textView"
@@ -14,6 +15,8 @@
         android:text="Tic Tac Toe"
         android:textAlignment="center"
         android:textSize="48sp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,6 +35,7 @@
         android:id="@+id/button"
         android:layout_width="208dp"
         android:layout_height="81dp"
+        android:backgroundTint="#D60E00"
         android:onClick="playButtonPressed"
         android:text="Play"
         app:layout_constraintBottom_toBottomOf="parent"
