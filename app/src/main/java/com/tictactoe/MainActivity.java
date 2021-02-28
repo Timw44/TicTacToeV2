@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void playButtonPressed(View view) {
         setContentView(R.layout.gamegrid);
-
+        backBtnAdded=false;
         // clear tttboard
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 3; j++) {
