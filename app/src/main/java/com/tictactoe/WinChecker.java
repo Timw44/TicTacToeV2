@@ -3,7 +3,6 @@ package com.tictactoe;
 public class WinChecker {
 
     int[][] tttboard;
-
     public WinChecker(int[][] tttboard) {
         this.tttboard = tttboard;
     }
