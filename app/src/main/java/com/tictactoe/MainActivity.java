@@ -126,10 +126,20 @@ public class MainActivity extends AppCompatActivity {
 
             switchPlayer();
             updatetttboard();
+            checkIfWon();
         } else {
             Toast.makeText(MainActivity.this, "Spot already taken", Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    private void updateTurnText()
+    {
+        if (firstPlayersTurn) {
+            turnText.setText("Current player turn is: Eagle");
+        } else {
+            turnText.setText("Current player turn is: Wing");
+        }
     }
 
     public void updatetttboard() {
@@ -145,16 +155,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
 
-        if (firstPlayersTurn) {
-            turnText.setText("Current player turn is: Eagle");
-        } else {
-            turnText.setText("Current player turn is: Wing");
-        }
-
+    public void checkIfWon()
+    {
         WinChecker wc = new WinChecker(tttboard);
         int wcout = wc.checkWinner();
-         if(wcout == 1) {
+        if(wcout == 1) {
             Log.d("DBG", "Eagles have won");
             Toast.makeText(MainActivity.this, "Eagles won", Toast.LENGTH_LONG).show();
             turnText.setText("EAGLES HAVE WON");
@@ -190,11 +197,13 @@ public class MainActivity extends AppCompatActivity {
        }
     }
 
-    public void switchPlayer() {
+    public void switchPlayer()
+    {
         if (firstPlayersTurn) {
             firstPlayersTurn = false;
         } else {
             firstPlayersTurn = true;
         }
+        updateTurnText();
     }
 }
