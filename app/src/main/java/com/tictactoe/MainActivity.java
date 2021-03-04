@@ -34,13 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.gamegrid);
         backBtnAdded=false;
         spotsAvailable=9;
-        // clear tttboard
-        for(int i = 0; i < 3; i++) {
-            for(int j = 0; j < 3; j++) {
-                tttboard[i][j] = -1;//clears board
-            }//end for loop col
-        }//end for loop row
-
+        clearBoard();
         // populate ivs list
         ivs[0] = findViewById(R.id.row1col1);
         ivs[1] = findViewById(R.id.row1col2);
@@ -57,7 +51,17 @@ public class MainActivity extends AppCompatActivity {
         updateTurnText();
     }//end playButtonPressed()
 
-// Checks which grid was pressed and changes the image according to which player's turn it is
+    // clears tic tac toe board
+    private void clearBoard()
+    {
+        for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+                tttboard[i][j] = -1;//clears board
+            }//end for loop col
+        }//end for loop row
+    }
+
+    // Checks which grid was pressed and changes the image according to which player's turn it is
     // Decreases the spots available so that if spotsAvailable==0 and no one won, a tie is determined
     public void grid1Pressed(View view) {
         spotsAvailable += -1;
