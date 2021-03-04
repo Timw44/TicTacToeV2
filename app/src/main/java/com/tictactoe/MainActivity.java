@@ -15,11 +15,13 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 //Variable initialization
     public int[][] tttboard = new int[3][3];
+    public ImageView[][] gameButtons = new ImageView[3][3];
     public boolean firstPlayersTurn = true;
     public ImageView[] ivs = new ImageView[9];
     public TextView turnText;
     public boolean backBtnAdded=false;
     public int spotsAvailable=9;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,38 @@ public class MainActivity extends AppCompatActivity {
         // register turn text var
         turnText = findViewById(R.id.turnText);
         updateTurnText();
+
+        setContentView(R.layout.gamegrid);
+
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j < 3; j++)
+            {
+                int id = getResources().getIdentifier("row"+(i+1)+"col"+(j+1),"id",getPackageName());
+                Log.println(Log.WARN,"BUTTON:", "row"+(i+1)+"col"+(j+1));
+                gameButtons[i][j] = (ImageView) findViewById(id);//id);
+                Log.println(Log.WARN,"BUTTON:",  gameButtons[i][j].toString());
+                final int finalRowPos = i;
+                final int finalColPos = j;
+                gameButtons[i][j].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        spotsAvailable += -1;
+                        if (firstPlayersTurn)
+                        {
+                            tttboard[finalRowPos][finalColPos] = 1;
+                        }
+                        else
+                        {
+                            tttboard[finalRowPos][finalColPos] = 0;
+                        }
+                        updatetttboard(view);
+                        switchPlayer();
+                        checkIfWon();
+                    }
+                });
+            }
+        }
     }//end playButtonPressed()
 
     // clears tic tac toe board
@@ -63,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Checks which grid was pressed and changes the image according to which player's turn it is
     // Decreases the spots available so that if spotsAvailable==0 and no one won, a tie is determined
+    /* -- old stuff
     public void grid1Pressed(View view) {
         spotsAvailable += -1;
         //sets view based on bool
@@ -125,8 +160,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView iv = findViewById(R.id.row3col3);
         whichImage(iv, 2, 2);
     }//end grid9Pressed()
-
-
+*/
+/*
 // Determine's whose turn it is and sets the value to 1 or 0
     public void whichImage(ImageView iv, int row, int col) {
         //tttboard[row][col] = firstPlayersTurn;
@@ -152,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
         }// else value !=-1
 
     }//end whichImage()
-
+*/
     //Changes the text to reflect who's turn it is
     private void updateTurnText()
     {
@@ -168,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     //Changes the btns from blank to either an eagle or wings depending on the value in the board
-    public void updatetttboard()
+    public void updatetttboard(View v)
     {
         for(int i = 0; i < 3; i++)
         {
@@ -176,11 +211,11 @@ public class MainActivity extends AppCompatActivity {
             {
                 if(tttboard[i][j] == 1)
                 {
-                    ivs[i*3 + j].setBackgroundResource(R.drawable.eagle);//Sets spot's image to an image of an eagle
+                   v.setBackgroundResource(R.drawable.eagle);//Sets spot's image to an image of an eagle
                 }// end if spot=1
                 else if(tttboard[i][j] == 0)
                 {
-                    ivs[i*3 + j].setBackgroundResource(R.drawable.wing); //Sets spot's image to an image of wings
+                   v.setBackgroundResource(R.drawable.wing); //Sets spot's image to an image of wings
                 }//end else if spot=0
             }//end for loop for col
         }//endfor loop for row
