@@ -94,21 +94,24 @@ public class MainActivity extends AppCompatActivity {
     public void checkIfWon()
     {
         WinChecker wc = new WinChecker(tttboard);
-        int wcout = wc.checkWinner(); // Checks to see if anyone won, returns a int
-        if(wcout == 1)
+        int wcout = wc.checkWinner(); // Checks to see if anyone won, returns a int; 0 = win, 1 = tie
+        if(wcout == 0)
         {
-            Log.d("DBG", "Eagles have won");
-            Toast.makeText(MainActivity.this, "Eagles won", Toast.LENGTH_LONG).show();
-            turnText.setText("EAGLES HAVE WON");
-            makeBackButton();
-        } //end if Eagles won
-        else if(wcout == 0)
-        {
-            Log.d("DBG", "Wings have won");
-            Toast.makeText(MainActivity.this, "Wings won", Toast.LENGTH_LONG).show();
-            turnText.setText("WINGS HAVE WON");
-            makeBackButton();
-        }//end else if wcout==0 (Wings won)
+            if(firstPlayersTurn)
+            {
+                Log.d("DBG", "Wings have won");
+                Toast.makeText(MainActivity.this, "Wings won", Toast.LENGTH_LONG).show();
+                turnText.setText("WINGS HAVE WON");
+                makeBackButton();
+            }
+            else
+            {
+                Log.d("DBG", "Eagles have won");
+                Toast.makeText(MainActivity.this, "Eagles won", Toast.LENGTH_LONG).show();
+                turnText.setText("EAGLES HAVE WON");
+                makeBackButton();
+            }
+        }
         else if(spotsAvailable==0)// if there are no spots available and no one won, then it is a tie
         {
             Log.d("DBG", "Tie");
@@ -116,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
             turnText.setText("TIE");
             makeBackButton();
         }//end else if spotsAvailable==0
-
     }//end checkIfWon()
 
 //Creates a back btn and returns to Main Menu if back button pressed
