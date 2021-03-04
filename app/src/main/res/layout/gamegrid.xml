@@ -149,7 +149,6 @@
         android:id="@+id/turnText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Current Player Turn is: "
-        android:textSize="28sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="28sp" />
 </LinearLayout>
