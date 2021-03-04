@@ -14,10 +14,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 //Variable initialization
-    public int[][] tttboard = new int[3][3];
-    public ImageView[][] gameButtons = new ImageView[3][3];
-    public boolean firstPlayersTurn = true;
-    public ImageView[] ivs = new ImageView[9];
+    public int[][] tttboard = new int[3][3]; //board data values; used to check for wins and status
+    public ImageView[][] gameButtons = new ImageView[3][3];//view buttons for clicks
+    public boolean firstPlayersTurn = true;//determines player's turn
     public TextView turnText;
     public boolean backBtnAdded=false;
     public int spotsAvailable=9;
@@ -37,16 +36,6 @@ public class MainActivity extends AppCompatActivity {
         backBtnAdded=false;
         spotsAvailable=9;
         clearBoard();
-        // populate ivs list
-        ivs[0] = findViewById(R.id.row1col1);
-        ivs[1] = findViewById(R.id.row1col2);
-        ivs[2] = findViewById(R.id.row1col3);
-        ivs[3] = findViewById(R.id.row2col1);
-        ivs[4] = findViewById(R.id.row2col2);
-        ivs[5] = findViewById(R.id.row2col3);
-        ivs[6] = findViewById(R.id.row3col1);
-        ivs[7] = findViewById(R.id.row3col2);
-        ivs[8] = findViewById(R.id.row3col3);
 
         // register turn text var
         turnText = findViewById(R.id.turnText);
@@ -55,19 +44,18 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i = 0; i < 3; i++)
         {
-            for(int j = 0; j < 3; j++)
+            for(int j = 0; j < 3; j++) //populate gameButtons 3x3 array
             {
                 int id = getResources().getIdentifier("row"+(i+1)+"col"+(j+1),"id",getPackageName());
-                Log.println(Log.WARN,"BUTTON:", "row"+(i+1)+"col"+(j+1));
-                gameButtons[i][j] = (ImageView) findViewById(id);//id);
+                gameButtons[i][j] = (ImageView) findViewById(id); //gets the id of buttons
                 Log.println(Log.WARN,"BUTTON:",  gameButtons[i][j].toString());
                 final int finalRowPos = i;
                 final int finalColPos = j;
-                gameButtons[i][j].setOnClickListener(new View.OnClickListener() {
+                gameButtons[i][j].setOnClickListener(new View.OnClickListener() { //create onclick listener per button
                     @Override
                     public void onClick(View view) {
                         spotsAvailable += -1;
-                        if (tttboard[finalRowPos][finalColPos] == -1)
+                        if (tttboard[finalRowPos][finalColPos] == -1) //if space is empty then change status/background img
                         {
                             if (firstPlayersTurn)
                             {
