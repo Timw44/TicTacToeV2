@@ -21,10 +21,10 @@
             android:orientation="horizontal">
 
 
-            <ImageView
+            <Button
                 android:id="@+id/row1col1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
@@ -32,10 +32,10 @@
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <ImageView
+            <Button
                 android:id="@+id/row1col2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
@@ -43,10 +43,10 @@
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <ImageView
+            <Button
                 android:id="@+id/row1col3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
@@ -61,10 +61,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
+            <Button
                 android:id="@+id/row2col1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
@@ -72,10 +72,10 @@
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <ImageView
+            <Button
                 android:id="@+id/row2col2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
@@ -83,10 +83,10 @@
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <ImageView
+            <Button
                 android:id="@+id/row2col3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
@@ -101,10 +101,10 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
+            <Button
                 android:id="@+id/row3col1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
@@ -112,10 +112,10 @@
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <ImageView
+            <Button
                 android:id="@+id/row3col2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
@@ -123,10 +123,10 @@
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <ImageView
+            <Button
                 android:id="@+id/row3col3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="125dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
