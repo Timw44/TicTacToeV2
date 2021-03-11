@@ -11,7 +11,7 @@
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/board"
+
         android:orientation="vertical">
 
         <LinearLayout
@@ -28,6 +28,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
+                android:contentDescription="@android:string/untitled"
                 android:onClick="grid1Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
@@ -39,6 +40,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
+                android:contentDescription="@android:string/untitled"
                 android:onClick="grid2Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
@@ -50,6 +52,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
+                android:contentDescription="@android:string/untitled"
                 android:onClick="grid3Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
@@ -68,6 +71,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
+                android:contentDescription="@android:string/untitled"
                 android:onClick="grid4Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
@@ -79,6 +83,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
+                android:contentDescription="@android:string/untitled"
                 android:onClick="grid5Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
@@ -90,6 +95,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
+                android:contentDescription="@android:string/untitled"
                 android:onClick="grid6Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
@@ -108,6 +114,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
+                android:contentDescription="@android:string/untitled"
                 android:onClick="grid7Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
@@ -119,6 +126,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
+                android:contentDescription="@android:string/untitled"
                 android:onClick="grid8Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
@@ -130,6 +138,7 @@
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
+                android:contentDescription="@android:string/untitled"
                 android:onClick="grid9Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
@@ -140,7 +149,6 @@
         android:id="@+id/turnText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Current Player Turn is: "
-        android:textSize="28sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="28sp" />
 </LinearLayout>
