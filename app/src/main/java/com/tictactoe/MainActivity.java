@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 //Variable initialization
     public int[][] tttboard = new int[3][3];
     public boolean firstPlayersTurn = true;
-    public Button[] ivs = new Button[9];
+    public ImageView[] ivs = new ImageView[9];
     public TextView turnText;
     public boolean backBtnAdded=false;
     public int spotsAvailable=9;
@@ -66,21 +66,21 @@ public class MainActivity extends AppCompatActivity {
     public void grid1Pressed(View view) {
         spotsAvailable += -1;
         //sets view based on bool
-        Button iv = findViewById(R.id.row1col1);
+        ImageView iv = findViewById(R.id.row1col1);
         whichImage(iv, 0, 0);
     }//end grid1Pressed()
 
     public void grid2Pressed(View view) {
         spotsAvailable += -1;
         //sets view based on bool
-        Button iv = findViewById(R.id.row1col2);
+        ImageView iv = findViewById(R.id.row1col2);
         whichImage(iv, 0, 1);
     }//end grid2Pressed()
 
     public void grid3Pressed(View view) {
         spotsAvailable += -1;
         //sets view based on bool
-        Button iv = findViewById(R.id.row1col3);
+        ImageView iv = findViewById(R.id.row1col3);
         whichImage(iv, 0, 2);
     }//end grid3Pressed()
 
@@ -88,47 +88,47 @@ public class MainActivity extends AppCompatActivity {
     {
         spotsAvailable += -1;
         //sets view based on bool
-        Button iv = findViewById(R.id.row2col1);
+        ImageView iv = findViewById(R.id.row2col1);
         whichImage(iv, 1, 0);
     }//end grid4Pressed()
 
     public void grid5Pressed(View view) {
         spotsAvailable += -1;
         //sets view based on bool
-        Button iv = findViewById(R.id.row2col2);
+        ImageView iv = findViewById(R.id.row2col2);
         whichImage(iv, 1, 1);
     }//end grid5pressed
     public void grid6Pressed(View view) {
         spotsAvailable += -1;
         //sets view based on bool
-        Button iv = findViewById(R.id.row2col3);
+        ImageView iv = findViewById(R.id.row2col3);
         whichImage(iv, 1, 2);
     }//end grid6Pressed()
 
     public void grid7Pressed(View view) {
         spotsAvailable += -1;
         //sets view based on bool
-        Button iv = findViewById(R.id.row3col1);
+        ImageView iv = findViewById(R.id.row3col1);
         whichImage(iv, 2, 0);
     }//end grid7Pressed()
 
     public void grid8Pressed(View view) {
         spotsAvailable += -1;
         //sets view based on bool
-        Button iv = findViewById(R.id.row3col2);
+        ImageView iv = findViewById(R.id.row3col2);
         whichImage(iv, 2, 1);
     }//end grid8Pressed()
 
     public void grid9Pressed(View view) {
         spotsAvailable += -1;
         //sets view based on bool
-        Button iv = findViewById(R.id.row3col3);
+        ImageView iv = findViewById(R.id.row3col3);
         whichImage(iv, 2, 2);
     }//end grid9Pressed()
 
 
 // Determine's whose turn it is and sets the value to 1 or 0
-    public void whichImage(Button iv, int row, int col) {
+    public void whichImage(ImageView iv, int row, int col) {
         //tttboard[row][col] = firstPlayersTurn;
         if (tttboard[row][col] == -1)//spot not taken
         {

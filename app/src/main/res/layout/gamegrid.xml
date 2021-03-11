@@ -11,6 +11,7 @@
         android:id="@+id/gridLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/board"
         android:orientation="vertical">
 
         <LinearLayout
@@ -20,39 +21,33 @@
             android:orientation="horizontal">
 
 
-            <Button
+            <ImageView
                 android:id="@+id/row1col1"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
                 android:onClick="grid1Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <Button
+            <ImageView
                 android:id="@+id/row1col2"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
                 android:onClick="grid2Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <Button
+            <ImageView
                 android:id="@+id/row1col3"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
                 android:onClick="grid3Pressed"
@@ -66,39 +61,33 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/row2col1"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
                 android:onClick="grid4Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <Button
+            <ImageView
                 android:id="@+id/row2col2"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
                 android:onClick="grid5Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <Button
+            <ImageView
                 android:id="@+id/row2col3"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
                 android:onClick="grid6Pressed"
@@ -112,39 +101,33 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+            <ImageView
                 android:id="@+id/row3col1"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
                 android:onClick="grid7Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <Button
+            <ImageView
                 android:id="@+id/row3col2"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
                 android:onClick="grid8Pressed"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/empty" />
 
-            <Button
+            <ImageView
                 android:id="@+id/row3col3"
                 android:layout_width="wrap_content"
-                android:layout_height="125dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:adjustViewBounds="true"
                 android:background="@drawable/empty"
                 android:onClick="grid9Pressed"
