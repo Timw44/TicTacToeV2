@@ -42,5 +42,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.083" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="208dp"
+        android:layout_height="81dp"
+        android:backgroundTint="#D60E00"
+        android:onClick="playButtonPressed"
+        android:text="play against computer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.696" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

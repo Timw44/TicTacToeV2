@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.gamegrid);
 
+        setup();
+    }//end playButtonPressed()
+
+    private void setup() {
         for(int i = 0; i < 3; i++)
         {
             for(int j = 0; j < 3; j++) //populate gameButtons 3x3 array
@@ -74,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }
-    }//end playButtonPressed()
+    }
 
     // clears tic tac toe board
     private void clearBoard()
