@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public TextView turnText;
     public boolean backBtnAdded=false;
     public int spotsAvailable=9;
+    public boolean gameOver = false;
 
 
     @Override
@@ -36,16 +37,34 @@ public class MainActivity extends AppCompatActivity {
         backBtnAdded=false;
         spotsAvailable=9;
         clearBoard();
+        gameOver = false;
+        firstPlayersTurn = true;
 
         // register turn text var
         turnText = findViewById(R.id.turnText);
 
         setContentView(R.layout.gamegrid);
 
-        setup();
+        setup(false);
     }//end playButtonPressed()
 
-    private void setup() {
+    public void playButton2Pressed(View view) {
+        setContentView(R.layout.gamegrid);
+        backBtnAdded=false;
+        spotsAvailable=9;
+        clearBoard();
+        gameOver = false;
+        firstPlayersTurn = true;
+
+        // register turn text var
+        turnText = findViewById(R.id.turnText);
+
+        setContentView(R.layout.gamegrid);
+
+        setup(true);
+    }//end playButtonPressed()
+
+    private void setup(boolean isSinglePlayer) {
         for(int i = 0; i < 3; i++)
         {
             for(int j = 0; j < 3; j++) //populate gameButtons 3x3 array
@@ -73,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
                             }
                             switchPlayer();
                             checkIfWon();
+                            if (isSinglePlayer)
+                            {
+                                moveBot();
+                            }
                         }
                     }
                 });
@@ -88,6 +111,28 @@ public class MainActivity extends AppCompatActivity {
                 tttboard[i][j] = -1;//clears board
             }//end for loop col
         }//end for loop row
+    }
+
+    private void moveBot()
+    {
+        boolean finished = false;
+        if (gameOver == false)
+        {
+            while(finished == false)
+            {
+                Log.println(Log.WARN,"thinking","trial");
+                int randomRowPos = (int)(Math.random()*tttboard.length);
+                int randomColPos = (int)(Math.random()*tttboard.length);
+                if (tttboard[randomRowPos][randomColPos] == -1)
+                {
+                    tttboard[randomRowPos][randomColPos] = 0;
+                    gameButtons[randomRowPos][randomColPos].setBackgroundResource(R.drawable.wing);
+                    switchPlayer();
+                    checkIfWon();
+                    finished = true;
+                }
+            }
+        }
     }
 
 //Calls WinChecker class which returns a value of -1,0, or 1
@@ -115,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 turnText.setText("EAGLES HAVE WON");
                 makeBackButton();
             }
+            gameOver = true;
         }
         else if(spotsAvailable==0)// if there are no spots available and no one won, then it is a tie
         {
@@ -122,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Tie", Toast.LENGTH_LONG).show();
             turnText.setText("TIE");
             makeBackButton();
+            gameOver = true;
         }//end else if spotsAvailable==0
     }//end checkIfWon()
 
